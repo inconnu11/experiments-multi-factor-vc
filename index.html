@@ -37,230 +37,14 @@
 							<font size = 5><p><i> Jie Wang, Jingbei Li, Xintao Zhao, Zhiyong Wu, Helen Meng </i></p></font>
 							Our paper is available from this link <a href="https://github.com/thuhcsi/icassp2021-multi-factor-vc/raw/main/audios/paper/multifactor-vc.pdf"> <b>UPDATED:</font></b> 2020-01-21</a>.
 							<br></br>
-							<section>
-								<h2><font size = 5 color= #58c3c2>ABSTRACT</font></h2>
-								<p>Factorizing speech as disentangled speech representations is vital to achieve highly controllable style transfer in voice conversion (VC). Conventional speech representation learning methods in VC only factorize speech as speaker and content, lacking controllability on other prosody-related factors. State-of-the-art speech representation learning methods for more speech factors are using primary disentangle algorithms such as random resampling and ad-hoc bottleneck layer size adjustment, which however is hard to ensure robust speech representation disentanglement. To increase the robustness of highly controllable style transfer on multiple factors in VC, we propose a disentangled speech representation learning framework based on adversarial learning. Four speech representations characterizing content, timbre, rhythm and pitch are extracted, and further disentangled by an adversarial network inspired by BERT. The adversarial network is used to minimize the correlations between the speech representations, by randomly masking and predicting one of the representations from the others. A word prediction network is also adopted to learn a more informative content representation. Experimental results show that the proposed speech representation  learning framework significantly improves the robustness of VC on multiple factors by increasing conversion rate from 48.2% to 57.1% and ABX preference exceeding by 31.2% compared with state-of-the-art method.
-							</section>
+							
 							<!-- Text -->
 							    <section>
 								<a name="traditional"></a>
-							    	<h2><font size = 5 color= #58c3c2>Conversion Tasks</font></h2>
-							    	<!-- <p>(Section x.x in the paper)</p> -->
-							    	<p>Our goal is to show seven types of multi-factor voice conversion tasks.</p>
-							    	<ul class="12u 12u$(medium)">
-										<li><b><font style="font-variant: small-caps">Proposed</font></b> - the disentangled speech representation learning framework based on adversarial learning</li>
-										<li><b><font style="font-variant: small-caps">Baseline</font></b> - the original voice conversion system SpeechFlow</li>
-									</ul>
-									<p>Below are a few demo audios.</p>
-
-									<h3><font size = 4 color= #58c3c2>Non-parallel Conversion</font></h2>
-									<p>Source : <i><b>"It will be crucial."</b></i></p>
-									<p>Target :<i><b> "We are in the end game."</b></i></p>
-									<p></p>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													
-													<th><font color= #58c3c2>Task</font></th>
-													<th><font color= #58c3c2 >Proposed</font></th>
-													<!-- <th><font color= #58c3c2 >Baseline</font></th> -->
-													<th><font color= #58c3c2>GroundTruth</font></th>
-									
-												</tr>
-											</thead>
-
-											<tbody>
-
-												<tr>
-													<td>Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/R/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_R_NOP.wav" /><embed height="50" ></embed></audio>
-														<!-- <img src="images/Demo_1/Proposed/R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-												<!-- 	<td><audio id ="audio"   controls=""><source src="audios/Demo_1/Baseline/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50"></embed></audio>
-														<img src="images/Demo_1/Baseline/",height=300 , width=300></td> -->
-													
-													<td rowspan="7">Source:p374 (Male) <audio id ="audio" controls=""><source src="audios/Demo_2/SandT/p374_424.wav" /><embed height="50"  width="100"></embed></audio>
-													<!-- <img src="images/Demo_1/Source/p225_p225_331_source_1.jpg",height=500 , width=300>   -->
-													<br>
-													Target:p225 (Female) <audio id ="audio" controls=""><source src="audios/Demo_2/SandT/p225_335.wav" /><embed height="50" width="100"></embed></audio>
-												<!-- 	<img src="images/Demo_1/Target/p225_p225_331_source_1.jpg",height=500 , width=300> --></td>
-													
-												</tr>
-												<tr>
-													<td>Pitch</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/F/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_F_NOP.wav" /><embed height="50"></embed></audio>
-														
-														<!-- <button οnclick="Buckinghide()" type="button" id="h_button">Img</button>
-															<div id="img_h" style="border:2px solid #ff0000;"> -->
-													<!-- 	<img src="images/P/test_withOUT_C.jpg",height=300 , width=300> -->
-															<!-- </div> -->
-													</td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
-												
-													<img src="images/P/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/U/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_U_NOP.wav" /><embed height="50" ></embed></audio>
-													<!-- 	<img src="images/T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													</td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
-														<img src="images/T/test_withOUT_C.jpg",height=300 , width=300></td>
-													</td> -->
-												</tr>
-												<tr>
-													<td>Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/FU/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_FU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Pitch+Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RF/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_RF_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RU/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_RU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RFU/p374_p225_test_p374_p374_424.npy_test_p225_p225_335.npy_RFU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-											</tbody>
-										</table>
-									</div>
+							    	<h2><font size = 5 color= #58c3c2>2021.1.26 </font></h2>
 
 
-									<p>Source : <i><b>"That time has passed."</b></i></p>
-									<p>Target :<i><b> "Ms Anderson yesterday put a brave face on the departure."</b></i></p>
-									<p></p>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													
-													<th><font color= #58c3c2>Task</font></th>
-													<th><font color= #58c3c2 >Proposed</font></th>
-													<!-- <th><font color= #58c3c2 >Baseline</font></th> -->
-													<th><font color= #58c3c2>GroundTruth</font></th>
-									
-												</tr>
-											</thead>
-
-											<tbody>
-
-												<tr>
-													<td>Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/R/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_R_NOP.wav" /><embed height="50" ></embed></audio>
-														<!-- <img src="images/Demo_1/Proposed/R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-												<!-- 	<td><audio id ="audio"   controls=""><source src="audios/Demo_1/Baseline/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50"></embed></audio>
-														<img src="images/Demo_1/Baseline/",height=300 , width=300></td> -->
-													
-													<td rowspan="7">Source:p374 (Male) <audio id ="audio" controls=""><source src="audios/Demo_2/SandT/p374_423.wav" /><embed height="50"  width="100"></embed></audio>
-													<!-- <img src="images/Demo_1/Source/p225_p225_331_source_1.jpg",height=500 , width=300>   -->
-													<br>
-													Target:p225 (Female) <audio id ="audio" controls=""><source src="audios/Demo_2/SandT/p225_331.wav" /><embed height="50" width="100"></embed></audio>
-												<!-- 	<img src="images/Demo_1/Target/p225_p225_331_source_1.jpg",height=500 , width=300> --></td>
-													
-												</tr>
-												<tr>
-													<td>Pitch</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/F/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_F_NOP.wav" /><embed height="50"></embed></audio>
-														
-														<!-- <button οnclick="Buckinghide()" type="button" id="h_button">Img</button>
-															<div id="img_h" style="border:2px solid #ff0000;"> -->
-													<!-- 	<img src="images/P/test_withOUT_C.jpg",height=300 , width=300> -->
-															<!-- </div> -->
-													</td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
-												
-													<img src="images/P/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/U/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_U_NOP.wav" /><embed height="50" ></embed></audio>
-													<!-- 	<img src="images/T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													</td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
-														<img src="images/T/test_withOUT_C.jpg",height=300 , width=300></td>
-													</td> -->
-												</tr>
-												<tr>
-													<td>Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/FU/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_FU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Pitch+Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RF/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_RF_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RU/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_RU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_2/Proposed/RFU/p374_p225_test_p374_p374_423.npy_test_p225_p225_331.npy_RFU_NOP.wav" /><embed height="50" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-											</tbody>
-										</table>
-									</div>
-
-
-
-
-
-
-									<h3><font size = 4 color= #58c3c2>Parallel Conversion</font></h2>
+									<h3><font size = 4 color= #58c3c2>Parallel Conversion</font></h3>
 									<p><i><b>"And we might go back."</b></i></p>
 									<p></p>
 									<div class="table-wrapper">
@@ -360,7 +144,60 @@
 										</table>
 									</div>
 
-									<p><i><b>"Yet the data is compelling."</b></i></p>
+
+									<div class="table-wrapper">
+										<table>
+
+											<thead>
+												<tr>
+													
+													<th><font color= #58c3c2>Task</font></th>
+													<th><font color= #58c3c2 >Proposed</font></th>
+													<th><font color= #58c3c2 >Baseline</font></th>
+													<!-- <th><font color= #58c3c2>GroundTruth</font></th> -->
+									
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>Remove Content</td>
+													<td><img src="images/disentangled/proposed content0pitch.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1 content0pitch.png",height=300 , width=300>
+													</td>
+												</tr>
+
+												<tr>
+												<td>Remove Rhythm</td>
+													<td><img src="images/disentangled/pr0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1r0.png",height=300 , width=300>
+													</td>
+												</tr>
+
+												<tr>
+												<td>Remove Pitch</td>
+											
+													<td><img src="images/disentangled/pp0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1p0.png",height=300 , width=300>
+													</td>
+												</tr>
+
+												<tr>
+												<td>Remove Timbre</td>
+												
+													<td><img src="images/disentangled/pt0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1t0.png",height=300 , width=300>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+
+
+
+									<h3><font size = 4 color= #58c3c2>Non-Parallel Conversion</font></h3>
+									<p><i><b>"And we might go back."</b></i></p>
 									<p></p>
 									<div class="table-wrapper">
 										<table>
@@ -369,7 +206,7 @@
 													
 													<th><font color= #58c3c2>Task</font></th>
 													<th><font color= #58c3c2 >Proposed</font></th>
-													<!-- <th><font color= #58c3c2 >Baseline</font></th> -->
+													<th><font color= #58c3c2 >Baseline</font></th>
 													<th><font color= #58c3c2>GroundTruth</font></th>
 									
 												</tr>
@@ -379,21 +216,21 @@
 
 												<tr>
 													<td>Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/R/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_R_NOP.wav" /><embed height="50" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50" ></embed></audio>
 														<!-- <img src="images/Demo_1/Proposed/R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-												<!-- 	<td><audio id ="audio"   controls=""><source src="audios/Demo_1/Baseline/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50"></embed></audio>
-														<img src="images/Demo_1/Baseline/",height=300 , width=300></td> -->
+													<td><audio id ="audio"   controls=""><source src="audios/Demo_1/Baseline/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50"></embed></audio>
+													<!-- 	<img src="images/Demo_1/Baseline/",height=300 , width=300> --></td>
 													
-													<td rowspan="7">Source:p272 (Male) <audio id ="audio" controls=""><source src="audios/Demo_1/Source/p272_383.wav" /><embed height="50"  width="100"></embed></audio>
-													<!-- <img src="images/Demo_1/Source/p225_p225_331_source_1.jpg",height=500 , width=300>   -->
+													<td rowspan="7">Source:p231 (Female) <audio id ="audio" controls=""><source src="audios/Demo_1/Source/p231_449.wav" /><embed height="50"  width="100"></embed></audio>
+													<!-- <img src="images/Demo_1/Source/p225_p225_331_source_1.jpg",height=500 , width=300>  --> 
 													<br>
-													Target:p285 (Male) <audio id ="audio" controls=""><source src="audios/Demo_1/Target/p285_382.wav" /><embed height="50" width="100"></embed></audio>
-												<!-- 	<img src="images/Demo_1/Target/p225_p225_331_source_1.jpg",height=500 , width=300> --></td>
+													Target:p250 (Female) <audio id ="audio" controls=""><source src="audios/Demo_1/Target/p250_450.wav" /><embed height="50" width="100"></embed></audio>
+													<!-- <img src="images/Demo_1/Target/p225_p225_331_source_1.jpg",height=500 , width=300> --></td>
 													
 												</tr>
 												<tr>
 													<td>Pitch</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/F/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
 														
 														<!-- <button οnclick="Buckinghide()" type="button" id="h_button">Img</button>
 															<div id="img_h" style="border:2px solid #ff0000;"> -->
@@ -401,162 +238,116 @@
 															<!-- </div> -->
 													</td>
 													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
 												
-													<img src="images/P/test_withOUT_C.jpg",height=300 , width=300></td> -->
+													<!-- <img src="images/P/test_withOUT_C.jpg",height=300 , width=300> --></td>
 												</tr>
 												<tr>
 													<td>Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/U/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
 													<!-- 	<img src="images/T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 													</td>
 													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
-														<img src="images/T/test_withOUT_C.jpg",height=300 , width=300></td>
-													</td> -->
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
+														<!-- <img src="images/T/test_withOUT_C.jpg",height=300 , width=300> --></td>
+													</td>
 												</tr>
 												<tr>
 													<td>Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/FU/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
 													
 													<!-- 	<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
 													
-														<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
+													<!-- 	<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 												</tr>
 												<tr>
 													<td>Pitch+Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RF/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													
+												<!-- 		<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300> --></td>
+													
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
 													
 													<!-- 	<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300></td> -->
 												</tr>
 												<tr>
 													<td>Rhythm+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RU/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<!-- 
+														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 													
-													<!-- 	<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<!-- 
+														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 												</tr>
 												<tr>
 													<td>Rhythm+Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RFU/p272_p285_test_p272_p272_383.npy_test_p285_p285_382.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
 													
 													<!-- 	<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
+													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
 													
-														<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
+													<!-- 	<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
 												</tr>
 											</tbody>
 										</table>
 									</div>
 
-									<p><i><b>"It will take place in July."</b></i></p>
-									<p></p>
+
+
 									<div class="table-wrapper">
 										<table>
+
 											<thead>
 												<tr>
 													
 													<th><font color= #58c3c2>Task</font></th>
 													<th><font color= #58c3c2 >Proposed</font></th>
-													<!-- <th><font color= #58c3c2 >Baseline</font></th> -->
-													<th><font color= #58c3c2>GroundTruth</font></th>
+													<th><font color= #58c3c2 >Baseline</font></th>
+													<!-- <th><font color= #58c3c2>GroundTruth</font></th> -->
 									
 												</tr>
 											</thead>
 
 											<tbody>
+												<tr>
+													<td>Remove Content</td>
+													<td><img src="images/disentangled/proposed content0pitch.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1 content0pitch.png",height=300 , width=300>
+													</td>
+												</tr>
 
 												<tr>
-													<td>Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/R/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_R_NOP.wav" /><embed height="50" ></embed></audio>
-														<!-- <img src="images/Demo_1/Proposed/R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-												<!-- 	<td><audio id ="audio"   controls=""><source src="audios/Demo_1/Baseline/R/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_R_NOP.wav" /><embed height="50"></embed></audio>
-														<img src="images/Demo_1/Baseline/",height=300 , width=300></td> -->
-													
-													<td rowspan="7">Source:p276 (Female) <audio id ="audio" controls=""><source src="audios/Demo_1/Source/p276_458.wav" /><embed height="50"  width="100"></embed></audio>
-													<!-- <img src="images/Demo_1/Source/p225_p225_331_source_1.jpg",height=500 , width=300>   -->
-													<br>
-													Target:p285 (Male) <audio id ="audio" controls=""><source src="audios/Demo_1/Target/p285_395.wav" /><embed height="50" width="100"></embed></audio>
-												<!-- 	<img src="images/Demo_1/Target/p225_p225_331_source_1.jpg",height=500 , width=300> --></td>
-													
-												</tr>
-												<tr>
-													<td>Pitch</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/F/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_F_NOP.wav" /><embed height="50" ></embed></audio>
-														
-														<!-- <button οnclick="Buckinghide()" type="button" id="h_button">Img</button>
-															<div id="img_h" style="border:2px solid #ff0000;"> -->
-													<!-- 	<img src="images/P/test_withOUT_C.jpg",height=300 , width=300> -->
-															<!-- </div> -->
+												<td>Remove Rhythm</td>
+													<td><img src="images/disentangled/pr0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1r0.png",height=300 , width=300>
 													</td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/F/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_F_NOP.wav" /><embed height="50" src="audios/cae/p225xp226_cae_u003001.mp3" ></embed></audio>
+												</tr>
+
+												<tr>
+												<td>Remove Pitch</td>
+											
+													<td><img src="images/disentangled/pp0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1p0.png",height=300 , width=300>
+													</td>
+												</tr>
+
+												<tr>
+												<td>Remove Timbre</td>
 												
-													<img src="images/P/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/U/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
-													<!-- 	<img src="images/T/test_withOUT_C.jpg",height=300 , width=300> --></td>
+													<td><img src="images/disentangled/pt0.png",height=300 , width=300></td>
+													<td><img src="images/disentangled/b1t0.png",height=300 , width=300>
 													</td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/U/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_U_NOP.wav" /><embed height="50" src="audios/star/p225xp226_star_u003001.mp3" ></embed></audio>
-														<img src="images/T/test_withOUT_C.jpg",height=300 , width=300></td>
-													</td> -->
 												</tr>
-												<tr>
-													<td>Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/FU/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-													<!-- 	<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/FU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_FU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Pitch+Rhythm</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RF/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RF/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RF_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RU/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-													<!-- 	<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-													<!-- <td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
-												<tr>
-													<td>Rhythm+Pitch+Timbre</td>
-													<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Proposed/RFU/p276_p285_test_p276_p276_458.npy_test_p285_p285_395.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-													<!-- 	<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300> --></td>
-													
-												<!-- 	<td><audio id ="audio"  controls=""><source src="audios/Demo_1/Baseline/RFU/p231_p250_test_p231_p231_449.npy_test_p250_p250_450.npy_RFU_NOP.wav" /><embed height="50" src="audios/chou/p225xp226_chou_u003001.mp3" ></embed></audio>
-													
-														<img src="images/P+R+T/test_withOUT_C.jpg",height=300 , width=300></td> -->
-												</tr>
+
 											</tbody>
 										</table>
 									</div>
+
+								</section>
 
 
 									
@@ -564,17 +355,8 @@
 									<a href="#" class="button special">Back to Top</a>
 									<a href="#traditional" class="button special">Back to Section Start</a>
 									<br></br><br></br>
-								</section>
 								
-								<section>
-								<a name="Component removed"></a>
-									<h2><font size = 5 color= #58c3c2>Component removed</font></h2>
-									<p>(Section 3.4 in the paper)</p>
-									<p>To further show the disentanglement performance of our proposed framework, we generate mel spectrograms with four speech factors removed by set the corresponding input as zero as shown below. 
-										Take content removed as an example, after the content information is removed, the spectrogram of the proposed system is composed of more uninformative blanks. It can be observed that the proposed system removes the content information more thoroughly than the baseline which means that in the proposed system, the amount of content information leaking into other encoders is less than baseline system. The pitch information is preserved more in the proposed system as it is less flat than baseline approach as annotated below.
-									When the rhythm is removed, both the reconstructed mel spectrograms of the two systems are blank except that there is a bright line in the below figures indicating that partial rhythm information is encoded by other encoders. When the pitch is removed, the pitch contour of the reconstructed speech generated by the proposed system retains the curve but is flatter than that of baseline. When the timbre is removed, both the formant position shift indicates the speaker identity changes. When one of the four speech factors is set zero, the proposed system not only removes the corresponding information more thoroughly but also keeps other information undamaged which shows that the proposed system achieves a better disentanglement.</p>
-
-									<p>Below are a few examples.</p>
+								
 
 
 									<p><i><b>"I must do something about it."</b></i></p>
@@ -628,14 +410,14 @@
 											</tbody>
 										</table>
 									</div>
-									<a href="#" class="button special">Back to Top</a>
-									<a href="#traditional" class="button special">Back to Section Start</a>
-									<br></br><br></br>
-								</section>
+									
+							
 								
 						
 								
-								
+									<a href="#" class="button special">Back to Top</a>
+									<a href="#traditional" class="button special">Back to Section Start</a>
+									<br></br><br></br>							
 
 			</div>
 
